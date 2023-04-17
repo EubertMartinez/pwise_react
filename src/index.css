@@ -1,33 +1,198 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
-*,
-*::before,
-*::after {
+*
+{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
 }
 
 body {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  overflow-x: hidden;
-  background-color: #6fff0031;
-  margin: 0;
-	padding: 0;
+  min-height: 100vh;
+  background: #6fff0031;
 }
 
-a {
-  text-decoration: none;
+/* Sidebar Navigation*/
+.navigation {
+position:fixed;
+top: 56px;
+left: 0;
+bottom: 0;
+width: 60px;
+border-radius: 5px;
+box-sizing: initial;
+border-top: 5px solid #ffffff;
+background-color: #529B1D;
+transition: width 0.5s;
+overflow-x:hidden ;
 }
 
-ul {
-  list-style: none;
+.navigation.active {
+  width: 290px;
 }
 
-.wrapper{
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0 ;
+  width: 100%;
+  padding-left: 5px;
+  padding-top: 90px;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style:none ;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.navigation ul li.active {
+  background: #fff;
+}
+
+/*
+.navigation ul li b:nth-child(1)
+{
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  width: 100%;
+  background: #fff;  
+}
+
+.navigation ul li b:nth-child(1)::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 20px;
+  background: #529B1D;
+}
+
+.navigation ul li b:nth-child(2) 
+{
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  width: 100%;
+  background: #fff;  
+}
+
+.navigation ul li b:nth-child(2)::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 20px;
+  background: #529B1D;
+}
+
+*/
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
   display: flex;
-
+  text-decoration: none;
+  color: #fff;
 }
+
+.navigation ul li.active a {
+  color: #529B1D;
+}
+
+.navigation ul li .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/*
+.hide{
+  position:fixed;
+  top: 170px;
+  left: 70px;
+  width: 90px;
+  border-radius: 5px;
+  box-sizing: initial;
+  background: #a2d47e;
+  text-align: center;
+  color:#fff;
+  opacity: 0;
+}
+
+.icon:hover ~ .hide{
+  opacity: 1;
+}
+*/
+
+.navigation ul li .icon ion-icon {
+  font-size: 1.5em;
+}
+.navigation ul li a .title{
+  position: relative;
+  display: block;
+  padding-left: 10px;
+  height: 60px;
+  line-height: 60px;
+  white-space: normal;
+}
+
+.toggle{
+  position:fixed ;
+  top: 120px;
+  left: 65px;
+  width: 23px;
+  height: 25px;
+  background: #8fd55c;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s linear;
+}
+
+.toggle.active {
+  background: #8fd55c;
+  top: 120px;
+  left:300px;
+}
+
+.toggle ion-icon {
+  position: absolute;
+  color: #fff;
+  font-size: 25px;
+  display: none;
+}
+
+.toggle ion-icon.open,
+.toggle.active ion-icon.close {
+  display: block;
+}
+
+.toggle ion-icon.close,
+.toggle.active ion-icon.open {
+  display: none;
+}
+
+/* End of Sidebar Navigation*/
 
 main {
   margin-left: 280px;
@@ -42,8 +207,9 @@ main h2 {
   margin-bottom: 1rem;
   margin-top: 0px;
   color: #529B1D;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
+  font-family: Verdana;
 }
  
 /*TOP NAVIGATION BAR*/
@@ -51,6 +217,7 @@ main h2 {
 .header{
 	background-color: #ffffff;
 	color: #fff;
+
 }
 
 .logo a img {
@@ -65,6 +232,8 @@ main h2 {
   display: flex;
 	justify-content: space-between;
 	align-items: center;
+  box-shadow: 2px 2px 5px #D1D1D1;
+  
 }
 
 
@@ -185,54 +354,3 @@ display: block;
 } 
 
 /*end of settings*/
-
-/*SIDEBAR*/
-.sidebar {
-  position: fixed;
-  top: 60px;
-  width: 260px;
-  height: calc(100% - 60px);
-  background: #529B1D;
-  overflow-x: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  z-index: 2;
-}
-
-.sidebar ul {
-  margin-top: 40px;
-  margin-left: 30px;
-
-}
-
-.sidebar ul li {
-  width: 100%;
-  list-style: none;
-}
-
-.sidebar ul li:hover {
-  background: #fff;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-}
-
-.sidebar ul li:hover a {
-  color: #529B1D;
-}
-
-.sidebar ul li a {
-  width: 100%;
-  text-decoration: none;
-  color: #fff;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-}
-
-.sidebar ul li a i {
-  min-width: 60px;
-  font-size: 24px;
-  text-align: center;
-}
-
-/*end of SIDEBAR*/

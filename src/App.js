@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 
+
 function App() {
   return (
     <html lang="en">
+
       <head>
         <meta charSet="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -37,57 +39,70 @@ function App() {
       		</div>
       	</header>
 
-        <div className="wrapper">
-      		<div className="sidebar">
-      			<ul>
-              <li>
-                <a href="#" id="active">
-                  <i className="bx bx-tachometer"></i>
-                  <div>Dashboard</div>
-                </a>
-              </li>
-        
-              <li>
-                <a href="#">
-                  <i className="bx bx-right-top-arrow-circle"></i>
-                    <div>Expenses</div>
-                </a>
-              </li>
-        
-              <li>
-                <a href="#">
-                  <i className="bx bx-wallet"></i>
-                    <div>Budget</div>
-                </a>
-              </li>
-        
-              <li>
-                <a href="#">
-                  <i className="bx bx-user"></i>
-                    <div>Household Members</div>
-                </a>
-              </li>
-        
-              <li>
-                <a href="#">
-                  <i className="bx bx-file"></i>
-                    <div>Reports</div>
-                </a>
-              </li>
-        
-              </ul>
-      		</div>
+        <div class="navigation">
+			    <ul>
+        <li class="list active">
+          <b></b>
+          <b></b>
+          <a href="#" >
+            <span class="icon"><ion-icon 
+            name="speedometer-outline"></ion-icon></span>
+            <span class="title">Dashboard</span>
 
-          <main>
-      			<div className="content">
-      				<h2>Dashboard</h2>
-      			</div>
-      		</main>
+          </a>
+        </li>
+  
+        <li class="list">
+          <a href="#">
+            <span class="icon"><ion-icon
+            name="bar-chart-outline"></ion-icon></span>
+            <span class="title">Expenses</span>
 
-        </div>
+          </a>
+        </li>
+  
+        <li class="list">
+          <a href="#">
+            <span class="icon"><ion-icon 
+            name="wallet-outline"></ion-icon></span>
+            <span class="title">Budget</span>
 
-        <script src="#"></script>
+          </a>
+        </li>
+  
+        <li class="list">
+          <a href="#">
+            <span class="icon"><ion-icon 
+            name="people-outline"></ion-icon></span>
+            <span class="title">Household Members</span>
+
+          </a>
+        </li>
+  
+        <li class="list">
+          <a href="#">
+            <span class="icon"><ion-icon 
+            name="reader-outline"></ion-icon></span>
+            <span class="title">Reports</span>
+            
+          </a>
+        </li>
+          </ul>
+		    </div>
+
+        <main>
+			    <div class="content">
+				    <h2>Dashboard</h2>
+			    </div>
+		    </main>
+
       </div>
+
+      <div class="toggle">
+        <ion-icon name="chevron-forward-outline" class="open"></ion-icon>
+        <ion-icon name="chevron-forward-outline" class="close"></ion-icon>
+      </div>
+
 
     </html>
   );
