@@ -1,3 +1,5 @@
+// eto ung script na hnd ko mapagana, open ang close toggle ng sidebar
+
 let menuToggle = document.querySelector('.toggle');
 let navigation = document.querySelector('.navigation')
 menuToggle.onclick = function(){
